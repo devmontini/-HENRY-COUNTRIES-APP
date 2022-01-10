@@ -5,30 +5,34 @@ const axios = require('axios');
 
 const activityRouter = Router();
 
+activityRouter.get("/", async (req, res) => {
+    try {
+        let getAllActivities = await Activity.findAll({
+            include: Country
+        });
+        return res.json(getAllActivities);
+    } catch (error) {
+        return next(error);
+    }
+})
+
 activityRouter.post("/", async (req, res) => {
-    let {name, dificultad, duracion, temporada, idPais} = req.body
 
     try {
-        if (name) {
-            
-            let createActividad = await Activity.create({
-                name,
-                dificultad,
-                duracion,
-                temporada
-            });
 
-            let createdDb = await Country.findAll({
-                where: {id: idPais}
-            });
-            
-            createActividad.addCountries(createdDb)
+        let {name, dificultad, duracion, temporada, idPais} = req.body
 
-            res.status(200).send('Actividad creada')
-        } else {
-            res.send('Actividad no creada')
-        }
-
+        const createActividad = await Activity.create({
+            name,
+            dificultad,
+            duracion,
+            temporada
+        });
+    
+        await createActividad.setCountries(idPais); 
+    
+        return res.status(200).json({ mesage: 'exito', createActividad });
+    
     } catch (error) {
         console.log(error);
     }

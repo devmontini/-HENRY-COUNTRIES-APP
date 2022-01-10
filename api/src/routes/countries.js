@@ -19,7 +19,6 @@ const getDataApi = async () => {
             subregion: el.subregion,
             area: el.area,
             population: el.population,
-            createInDataBase: false
             }
         })
         return dataApi
