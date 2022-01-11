@@ -1,0 +1,28 @@
+.container{
+    width: 100%;
+    margin: 4px;
+    border-radius: 20px;
+    border-color: transparent;
+}
+
+.input{
+    width: 60%;
+    font-size: 1rem;
+    font-family: 'Open Sans Condensed', sans-serif;
+    box-shadow: 0 5px 40px #000;
+    margin: 2px;
+    border-radius: 20px;
+    border-color: transparent;
+}
+
+.button{
+    width: 30%;
+    font-size: 1rem;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: bold;
+    box-shadow: 0 5px 40px #000;
+    margin: 2px;
+    border-radius: 20px;
+    border-color: transparent;
+    background-color: #cc3600;
+}

@@ -1,0 +1,45 @@
+
+.container {
+    margin: 0;
+    height: 98vh;
+    width: 98vw;
+    display: flex;
+    background-color: #636366;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+}
+
+.image{
+    margin: 0;
+    width: 80vw;
+    height: 50vh;
+    background-image: url("https://www.grandchallenges.ca/wp-content/uploads/2016/01/countries.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.title{
+    margin-top: 7%;
+    margin-bottom: 7%;
+    font-size: 5vh;
+}
+
+.button{
+    margin: 0;
+    display: flex;
+    text-decoration: none;
+    font-size: 3vh;
+    background-color: #cc3600;
+    display: inline-block;
+    position: relative;
+    border-color: transparent;
+    border-width: 0.1vw;
+    border-radius: 15px;
+}
+
+.name{
+    font-size: 1.5vh;
+}

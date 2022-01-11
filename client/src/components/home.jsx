@@ -1,3 +1,5 @@
+import styles from './modules/home.module.css'
+
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
@@ -14,9 +16,9 @@ export default function HomePage () {
     const activities = useSelector((state) => state.activities)
     const [orden, setOrden] = useState('')
     const [currentPage, setCurrentPage] = useState(1) //La pagina empieza en la 1
-    const [countriesPerPage, setCountriesPerPage] = useState(10) //La pagina tiene 12 poke x Pagina
-    const indexOfLastCountry = currentPage * countriesPerPage // ultimo personaje en 12 (1 x 12)
-    const indexOfFirstCountry =  indexOfLastCountry - countriesPerPage //// primer personaje en 0 (12 - 12)
+    const [countriesPerPage, setCountriesPerPage] = useState(10) //La pagina tiene 10 x Pagina
+    const indexOfLastCountry = currentPage * countriesPerPage // ultimo countri en 10 (1 x 10)
+    const indexOfFirstCountry =  indexOfLastCountry - countriesPerPage //// primer countri en 0 (10 - 10)
     const currentCountry = Array.isArray(allCountries) &&  allCountries.slice(indexOfFirstCountry, indexOfLastCountry)
 
     const paginado = (pageNumber) => {
@@ -60,42 +62,44 @@ export default function HomePage () {
     }
 
     return(
-        <div>
+        <div className={styles.container}>
+
 
             {/*/////////////// NAV /////////////// */}
-            <nav>
-
-                {/* titulo  */}
-                <h1>COUNTRIES</h1>
+            <nav className={styles.nav}>
+            
+                {/*/////////////// TITLE/BUTTON /////////////// */}
+                <button className={styles.title} onClick={e => {handleRecargar(e)}}>
+                    COUNTRIES
+                </button>
 
                 {/* creacion  */}
-                <Link to='/create'> Crea tu actividad </Link>
+                <div>
+                    <Link to='/create'>
+                        <button className={styles.create}>Crea tu actividad</button>  
+                    </Link>
+                </div>
 
                 {/* search */}
-                <SearchBar/>
-
-                {/* recargar */}
-                <div> {/* flata recargar de nuevo sin esperear api */}
-                    <button onClick={e => {handleRecargar(e)}}>
-                        Volver a cargar paises
-                    </button>
+                <div>
+                    <SearchBar  className={styles.searchbar}/>
                 </div>
 
                 {/* ordenador */}
-                <div>
-                    <select onClick={e => {handleSortName(e)}}>
+                <div className={styles.orden}>
+                    <select className={styles.orden1} onClick={e => {handleSortName(e)}}>
                         <option value='asc'> Ascendente </option>
                         <option value='desc'> Descendente </option>
                     </select>
-                    <select onClick={e => {handlSortPopu(e)}}>
+                    <select className={styles.orden2} onClick={e => {handlSortPopu(e)}}>
                         <option value='popu'> Poblacion asc </option>
                         <option value='pop'> Poblacion des </option>
                     </select>
                 </div>
 
                 {/* filtrado */}
-                <div>
-                    <select onChange={e => handleFilterContinent(e)}>
+                <div className={styles.filtros} >
+                    <select className={styles.filtro1} onChange={e => handleFilterContinent(e)}>
                         <option value='all'>Mundo</option>
                         <option value="Asia">Asia</option>
                         <option value="Europe">Europe</option>
@@ -105,7 +109,7 @@ export default function HomePage () {
                         <option value="Antarctica">Antarctica</option>
                         <option value="South America">South America</option>
                     </select>
-                    <select onChange={(e) => handleByActivity(e)}>
+                    <select className={styles.filtro2} onChange={(e) => handleByActivity(e)}>
                         <option value='All'>All Activities</option>
                         {
                             activities.map((el)=> {
@@ -119,35 +123,41 @@ export default function HomePage () {
 
             </nav>
 
-            {/*////////////// PAGINADO /////////////// */}
-            <div> {/* FALTA PAG 1=9 las otras=12 */}
-                <Paginado countriesPerPage={countriesPerPage} allCountries={allCountries.length} paginado={paginado}/>
-            </div>
+            {/*////////////// PAGINADO/COUNTRIES /////////////// */}
 
-            {/*/////////////// AREA /////////////// */}
-            <div>
-                {
-                    currentCountry ? currentCountry.map((el)=> {
-                        return (
-                            <div key={el.id}>
-                                <Link to={'/details/' + el.id}>
-                                    <Card flags={el.flags} name={el.name} continents={el.continents} key={el.id}/>
-                                </Link>
-                            </div>
-                        )
-                    }) :
-                    <div>
-                        <Link to={'/details/' + allCountries.id}>
-                            <Card 
-                                flags={allCountries.flags} 
-                                name={allCountries.name}
-                                continents={allCountries.continents} 
-                                key={allCountries.id}>
-                            </Card>
-                        </Link>
-                    </div>
-                } 
+            <div className={styles.countriesPag}>
+
+                {/* area */}
+                <div className={styles.area}>
+                    {
+                        currentCountry ? currentCountry.map((el)=> {
+                            return (
+                                <div key={el.id}>
+                                    <Link to={'/details/' + el.id}>
+                                        <Card flags={el.flags} name={el.name} continents={el.continents} key={el.id}/>
+                                    </Link>
+                                </div>
+                            )
+                        }) :
+                        <div>
+                            <Link to={'/details/' + allCountries.id}>
+                                <Card 
+                                    flags={allCountries.flags} 
+                                    name={allCountries.name}
+                                    continents={allCountries.continents} 
+                                    key={allCountries.id}>
+                                </Card>
+                            </Link>
+                        </div>
+                    } 
+                </div>
+
+                {/* paginado */}  
+                <div className={styles.paginado} > 
+                    <Paginado countriesPerPage={countriesPerPage} allCountries={allCountries.length} paginado={paginado}/>
+                </div>
             </div>
+            
         </div>
     )
 }

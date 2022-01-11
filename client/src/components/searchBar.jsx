@@ -1,3 +1,6 @@
+import styles from './modules/searchBar.module.css'
+
+
 import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
@@ -19,10 +22,10 @@ export default function SearchBar() {
     }
 
     return (
-        <div>
-            <input type='text' placeholder='Name...'
+        <div className={styles.container}>
+            <input className={styles.input} type='text' placeholder='Name...'
             onChange={e => handleInputChange(e)}></input>
-            <button type='submit' onClick={e => handleSubmit(e)}>Search</button>
+            <button className={styles.button} type='submit' onClick={e => handleSubmit(e)}>Search</button>
         </div>
     )
 }

@@ -1,0 +1,125 @@
+.container {
+    margin: 0;
+    height: 98vh;
+    width: 98vw;
+    overflow: scroll;
+    display: flex;
+    background-color: #636366;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 30px;
+}
+
+.nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title{
+    font-weight: bold;
+    font-size: 2rem;
+    font-family: 'Open Sans Condensed', sans-serif;
+    background-color: transparent;
+    border-radius: 15;
+    border-color: transparent;
+}
+
+.create{
+    font-size: 1rem;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: bold;
+    box-shadow: 0 5px 40px #000;
+    margin: 4px;
+    border-radius: 20px;
+    border-color: transparent;
+    background-color: #cc3600;
+}
+
+/* ORDENADO */
+.orden{
+    border-radius: 20px;
+    margin: 4px;
+}
+
+.orden1{
+    font-size: 1rem;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 700;
+    box-shadow: 0 5px 40px #000;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin: 2px;
+    background-color: #c7c7c6;
+    padding: 0.2em 1.2rem;
+}
+
+.orden2{
+    font-size: 1rem;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 700;
+    box-shadow: 0 5px 40px #000;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin: 2px;
+    background-color: #c7c7c6;
+    padding: 0.2em 1.2rem;
+}
+
+/* FILTRO */
+.filtros{
+    margin: 4px;
+}
+
+.filtro1{
+    width: 100%;
+    font-size: 1rem;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 700;
+    box-shadow: 0 5px 40px #000;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin: 2px;
+    background-color: #c7c7c6;
+    padding: 0.2em 1.2rem;
+}
+
+.filtro2{
+    width: 100%;
+    font-size: 1rem;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 700;
+    box-shadow: 0 5px 40px #000;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin: 2px;
+    background-color: #c7c7c6;
+    padding: 0.2em 1.2rem;
+}
+
+/* PAGINADO  */
+.countriesPag{
+    display: flex;
+    flex-direction: row;
+}
+
+.paginado{
+    margin: 0;
+    width: 15vw;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    justify-self: flex-start;
+}
+
+/* AREA  */
+.area{
+    margin: 0;
+    width: 75vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: transparent;
+}
+

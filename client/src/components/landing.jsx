@@ -1,18 +1,19 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import styles from './modules/landing.module.css'
+
 export default function LandingPage() {
     return(
-        <div>
+        <div className={styles.container}>
 
             {/*/////////////// LANDING /////////////// */}
-
-            <img src="https://thumbs.dreamstime.com/z/banderas-de-diferentes-pa%C3%ADses-del-mundo-con-los-nombres-en-desarrollo-171911236.jpg" alt="" width="350px" height="350"/>
-            <h1>PI COUNTRIES</h1>
+            <div className={styles.image}></div>
+            <h1 className={styles.title}>PI COUNTRIES</h1>
             <Link to='/home'>
-                <button>Enterar</button>
+                <button className={styles.button}>entrar</button>
             </Link>
-
+            <h6 className={styles.name}>by FM</h6>        
         </div>
     )
 }
