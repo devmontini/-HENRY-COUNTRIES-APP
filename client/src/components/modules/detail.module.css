@@ -9,10 +9,6 @@
     border-radius: 30px;
 }
 
-.content {
-
-}
-
 .img{
     width: 98vw;
 }
@@ -39,7 +35,7 @@
     margin-right: 12vw;
     font-size: 1.2rem;
     font-family: 'Open Sans Condensed', sans-serif;
-    overflow: scroll;
+    overflow: hidden;
 }
 
 .activ h3{
@@ -61,3 +57,64 @@
     background-color: #cc3600;
   }
 
+
+@media (min-width: 600px) {
+    .container {
+        margin: 0;
+        height: 99vh;
+        width: 99vw;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .content{
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    
+    .img{
+        width: 50%;
+    }
+    
+    .title{
+        margin-left: 0;
+    }
+    
+    .data{
+        width: 800px;
+        display: flex;
+    }
+    
+    .info{
+        margin-left: 12vw;
+        font-size: 1.2rem;
+        font-family: 'Open Sans Condensed', sans-serif;
+    }
+    
+    .activ{
+        margin-right: 12vw;
+        font-size: 1.2rem;
+        font-family: 'Open Sans Condensed', sans-serif;
+        overflow: scroll;
+        overflow-x: hidden;
+    }
+    
+    .activ h3{
+        margin-right: 12vw;
+        font-size: 1.2rem;
+        font-family: 'Open Sans Condensed', sans-serif;
+    }
+    
+    .button {
+        background: #c7c7c6;
+        border-color: transparent;
+        font-size: 1.2rem;
+        font-family: 'Open Sans Condensed', sans-serif;
+        border: none;
+        border-radius: 20px;
+    }
+    
+}

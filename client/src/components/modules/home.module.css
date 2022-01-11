@@ -3,6 +3,8 @@
     height: 98vh;
     width: 98vw;
     overflow: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
     display: flex;
     background-color: #636366;
     flex-direction: column;
@@ -10,19 +12,18 @@
     border-radius: 30px;
 }
 
-.nav{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .title{
     font-weight: bold;
     font-size: 2rem;
     font-family: 'Open Sans Condensed', sans-serif;
     background-color: transparent;
-    border-radius: 15;
     border-color: transparent;
+}
+
+.nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .create{
@@ -121,5 +122,78 @@
     justify-content: space-around;
     flex-wrap: wrap;
     background-color: transparent;
+}
+
+@media (min-width: 600px) {
+    .container {
+        margin: 0;
+        height: 99vh;
+        width: 99vw;
+    }
+
+    .title{
+        font-size: 4rem;
+    }
+
+    .create{
+        font-size: 1.2rem;
+        box-shadow: 0 5px 40px #000;
+        margin: 4px;
+    }
+    
+    .nav{
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+    
+    /* ORDENADO */
+    .orden{
+        border-radius: 20px;
+        margin-right: 4px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .orden1{
+        margin: 4px;
+    }
+    
+    .orden2{
+        margin: 4px;
+    }
+    
+    /* FILTRO */
+    .filtros{
+        margin-right: 4px;
+    }
+    
+    .filtro1{
+        margin: 4px;
+    }
+    
+    .filtro2{
+        margin: 4px;
+    }
+    
+    .countriesPag{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .paginado{
+        margin: 10px;
+        width: 800px;
+        display: flex;
+        flex-direction: row;
+        background-color: transparent;
+        justify-content: center;
+    }
+
+    .area{
+        margin: 10px;
+        width: 800px;
+    }  
+
 }
 

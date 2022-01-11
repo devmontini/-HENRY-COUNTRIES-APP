@@ -8,6 +8,9 @@
     flex-direction: column;
     align-items: center;
     border-radius: 30px;
+    overflow: hidden;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 .title{
@@ -60,4 +63,40 @@
 
 .create:hover .return:hover {
     background-color: #a77b6b;
+}
+
+@media (min-width: 600px) {
+    .container {
+        margin: 0;
+        height: 99vh;
+        width: 99vw;
+    }
+
+    .title{
+        font-size: 4rem;
+    }
+
+    .nav{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .nav div{
+        justify-content: space-between;
+        font-size: 1.2rem;
+        margin-top: 10px;
+    }
+    
+    .return{
+        font-size: 1.4rem;
+        margin: 20px;
+    }
+    
+    .create{
+        font-size: 1.4rem;
+        margin: 20px;
+    }
+    
 }

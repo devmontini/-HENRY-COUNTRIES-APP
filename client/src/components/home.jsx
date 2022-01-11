@@ -64,21 +64,21 @@ export default function HomePage () {
     return(
         <div className={styles.container}>
 
+            {/*/////////////// TITLE/BUTTON /////////////// */}
+            <button className={styles.title} onClick={e => {handleRecargar(e)}}>
+                COUNTRIES
+            </button>
 
+            {/* creacion  */}
+            <div>
+                <Link to='/create'>
+                    <button className={styles.create}>Crea tu actividad</button>  
+                </Link>
+            </div>
             {/*/////////////// NAV /////////////// */}
             <nav className={styles.nav}>
             
-                {/*/////////////// TITLE/BUTTON /////////////// */}
-                <button className={styles.title} onClick={e => {handleRecargar(e)}}>
-                    COUNTRIES
-                </button>
 
-                {/* creacion  */}
-                <div>
-                    <Link to='/create'>
-                        <button className={styles.create}>Crea tu actividad</button>  
-                    </Link>
-                </div>
 
                 {/* search */}
                 <div>

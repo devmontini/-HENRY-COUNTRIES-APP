@@ -43,3 +43,10 @@
 .name{
     font-size: 1.5vh;
 }
+
+@media (min-width: 600px) {
+    .image{
+        width: 400px;
+        height: 400px;
+    }
+}

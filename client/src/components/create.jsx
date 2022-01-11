@@ -142,14 +142,16 @@ export default function ActivityCreate(){
                             )
                         }
                     </div>
-                    <div>
-                        <label>Countries: </label>
-                        <select onChange={(e) => handleSelect(e)}>
-                            <option>---</option>
-                            {countries.map((e) => (
-                                <option value={e.id}>{e.name}</option>
-                            ))}
-                        </select>
+                    <div className={styles.option}>
+                        <div>
+                            <label>Countries: </label>
+                            <select onChange={(e) => handleSelect(e)}>
+                                <option>---</option>
+                                {countries.map((e) => (
+                                    <option value={e.id}>{e.name}</option>
+                                ))}
+                            </select>
+                        </div>
                         <ul>
                             {input.idPais.map((e) =>( 
                                 <li>
