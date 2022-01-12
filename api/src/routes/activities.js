@@ -10,7 +10,7 @@ activityRouter.get("/", async (req, res) => {
         let getAllActivities = await Activity.findAll({
             include: Country
         });
-        return res.json(getAllActivities);
+        return res.status(200).json(getAllActivities);
     } catch (error) {
         return next(error);
     }
