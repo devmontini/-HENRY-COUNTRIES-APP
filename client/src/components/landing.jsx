@@ -5,7 +5,7 @@ import styles from './modules/landing.module.css'
 
 export default function LandingPage() {
     return(
-        <div className={styles.container}>
+        <div name="landing" className={styles.container}>
 
             {/*/////////////// LANDING /////////////// */}
             <div className={styles.image}></div>

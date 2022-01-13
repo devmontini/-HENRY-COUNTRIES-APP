@@ -88,7 +88,7 @@ export default function ActivityCreate(){
                 <form  onSubmit={(e) => handleSubmit(e)}>
                     <div>
                         <label> Nombre: </label>
-                        <input required type="text" name="name" value={input.name} onChange={(e) => handleChange(e)}/>
+                        <input required type="text" placeholder="name" name="name" value={input.name} onChange={(e) => handleChange(e)}/>
                         {
                             errors.name && (
                                 <p>
@@ -100,6 +100,7 @@ export default function ActivityCreate(){
                     <div>
                         <label> Dificultad: </label>
                         <select required name='dificultad' value={input.dificultad} onChange={(e) => handleChange(e)}> 
+                            <option value="" selected disabled>Dificultad</option>
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -116,7 +117,7 @@ export default function ActivityCreate(){
                     </div>
                     <div>
                         <label> Duracion: </label>
-                        <input required placeholder="hh.mm" name="duracion" type="text" value={input.duracion} onChange={(e) => handleChange(e)}/>
+                        <input required type="time" placeholder="hh.mm" name="duracion" value={input.duracion} onChange={(e) => handleChange(e)}/>
                         {
                             errors.duracion && (
                                 <p>
@@ -128,7 +129,7 @@ export default function ActivityCreate(){
                     <div>
                         <label> Temporada: </label>
                             <select required  name='temporada' value={input.temporada} onChange={(e) => handleChange(e)}>
-                                <option>Temporada</option>
+                                <option value="" selected disabled>Temporada</option>
                                 <option>Verano</option>
                                 <option>Otoño</option>
                                 <option>Invierno</option>
@@ -146,19 +147,19 @@ export default function ActivityCreate(){
                         <div>
                             <label>Countries: </label>
                             <select onChange={(e) => handleSelect(e)}>
-                                <option>---</option>
+                                <option  selected="false" disabled>Seleccionar pais</option>
                                 {countries.map((e) => (
                                     <option value={e.id}>{e.name}</option>
                                 ))}
                             </select>
+                            <ul>
+                                {input.idPais.map((e) =>( 
+                                    <li>
+                                        <button type="button" onClick={() => handleDelete(e)}>{e}{" "}x</button>
+                                    </li>
+                                ))}
+                            </ul>        
                         </div>
-                        <ul>
-                            {input.idPais.map((e) =>( 
-                                <li>
-                                    {e}{' '}<button onClick={() => handleDelete(e)}>x</button>{' '}
-                                </li>
-                            ))}
-                        </ul>        
                     </div>
                     <div>
                         <button  className={styles.create} type='submit'>Create</button>
