@@ -19,7 +19,7 @@ export default function HomePage () {
     const [countriesPerPage, setCountriesPerPage] = useState(10) //La pagina tiene 10 x Pagina
     const indexOfLastCountry = currentPage * countriesPerPage // ultimo countri en 10 (1 x 10)
     const indexOfFirstCountry =  indexOfLastCountry - countriesPerPage //// primer countri en 0 (10 - 10)
-    const currentCountry = Array.isArray(allCountries) &&  allCountries.slice(indexOfFirstCountry, indexOfLastCountry)
+    const currentCountry = allCountries.slice(indexOfFirstCountry, indexOfLastCountry)
 
     const paginado = (pageNumber) => {
         setCurrentPage(pageNumber)
