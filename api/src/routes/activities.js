@@ -31,7 +31,7 @@ activityRouter.post("/", async (req, res) => {
     
         await createActividad.setCountries(idPais); 
     
-        return res.status(200).json({ mesage: 'exito', createActividad });
+        res.status(200).json({ mesage: 'Se creo', createActividad });
     
     } catch (error) {
         console.log(error);
