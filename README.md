@@ -13,7 +13,7 @@
 - Una Single Page Application (SPA) con el uso de una API externa(rest countries).
 - En la misma se puede agregar actividades turísticas (Duración , nombre, temporada y dificultad) a distintos países.
 - La SPA permite filtrar por continente y actividades creadas. Además se puede ordenar los países por población y por nombre.
--Tecnologías:<br />
+- Tecnologías:<br />
     BD => PostgreSQL, Sequelize<br />
     Back => Node.js, Express.js<br />
     Front => React.js, Redux.js<br />
