@@ -14,6 +14,8 @@
   <img align="left" alt="Portfolio" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@3.13.0/icons/affinityphoto.svg" />
 </a><br />
 
+<img align="right" alt="GIF" src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" />
+
 ### Proyecto de actividades turísticas!
 - Una Single Page Application (SPA)  API externa(rest countries).
 - Add activities from countries.
